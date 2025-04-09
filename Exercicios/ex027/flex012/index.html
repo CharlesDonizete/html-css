@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexible box</title>
+    <style>
+      div.conteiner {
+        background-color: lightsalmon;
+        display: flex;
+        flex-flow: row nowrap;
+      }
+
+      div.item {
+        background-color: lightskyblue;
+        border: 1px solid black;
+        text-align: center;
+      }
+
+      div#cxA {
+        /* flex-shrink: 0;
+        flex-grow: 1;
+        flex-basis: 200px; */
+
+        flex: 1 0 200px;
+      }
+      div#cxB {
+        /* flex-shrink: 1;
+        flex-grow: 1;
+        flex-basis: 200px; */
+
+        /*--
+          A propriedade "flex" é um atalho para definir as propriedades flex-grow, flex-shrink e flex-basis de um item flexível.
+          Neste caso, "flex: 1 1 150px;" significa:
+
+          - flex-grow (1): Especifica quanto o item flexível irá crescer em relação aos outros itens flexíveis quando houver espaço extra disponível.
+          - flex-shrink (1): Especifica quanto o item flexível irá encolher em relação aos outros itens flexíveis quando não houver espaço suficiente.
+          - flex-basis (150px): Especifica o tamanho inicial do item flexível antes de qualquer crescimento ou encolhimento. Pode ser um comprimento (ex.: px, %, etc.) ou "auto".
+        --*/
+        flex: 1 1 150px;
+      }
+      div#cxC {
+        /* flex-shrink: 8;
+        flex-grow: 1;
+        flex-basis: 200px; */
+
+        flex: 1 8 200px;
+      }
+
+      /* 
+        O dois são equivalentes:
+        flex: 0 1 auto
+        flex: initial
+
+        Para os componente não terem nenhum efeito de flex, podemos usar o valor "none".
+        flex: 0 0 auto;
+        flex: none;
+
+        Crescer a vontado e diminuir a vontade:
+        flex: 1 1 auto;
+        flex: auto;
+
+        Se colocar somente um numero, significa que está alterando o flex-grow.
+        flex: 3;
+        flex: 3 1 auto;
+      */
+    </style>
+  </head>
+  <body>
+    <div class="conteiner">
+      <div class="item" id="cxA">A</div>
+      <div class="item" id="cxB">B</div>
+      <div class="item" id="cxC">C</div>
+    </div>
+  </body>
+</html>
